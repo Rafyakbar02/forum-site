@@ -8,12 +8,14 @@ const page = () => {
       <h1 className="mb-4 mx-auto font-bold">Create New Post</h1>
       <TextInput placeholder={"Title"} />
       <TextArea />
-      <a
-        href="/"
-        className="bg-blue-700 px-3 py-2 text-white rounded-xl mx-auto"
-      >
-        Submit
-      </a>
+      <div className="flex flex-row gap-4 mx-auto">
+        <a href="/" className="px-3 py-2 text-white rounded-xl bg-gray-700">
+          Cancel
+        </a>
+        <a href="/" className="bg-blue-700 px-3 py-2 text-white rounded-xl">
+          Submit
+        </a>
+      </div>
     </section>
   );
 };
