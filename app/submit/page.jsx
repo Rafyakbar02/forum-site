@@ -5,7 +5,7 @@ import TextArea from "../components/TextArea";
 const page = () => {
   return (
     <section className="p-4 flex flex-col m-auto w-3/4 max-w-xl">
-      <h1 className="mb-4 mx-auto font-bold">Create New Post</h1>
+      <h1 className="m-8 mx-auto font-bold text-3xl">Create New Post</h1>
       <TextInput placeholder={"Title"} />
       <TextArea />
       <div className="flex flex-row gap-4 mx-auto">

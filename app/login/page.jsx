@@ -4,7 +4,7 @@ import TextInput from "../components/TextInput";
 const page = () => {
   return (
     <section className="p-4 flex flex-col m-auto w-3/4 max-w-xl">
-      <h1 className="mb-4 mx-auto font-bold">Login</h1>
+      <h1 className="m-8 mx-auto font-bold text-3xl">Login</h1>
       <TextInput placeholder={"Email"} />
       <TextInput placeholder={"Password"} />
       <a
