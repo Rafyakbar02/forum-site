@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white">
       <div className="mx-auto p-4 flex items-center justify-between max-w-6xl">
-        <a href="" className="font-bold text-lg tracking-widest">
+        <a href="/" className="font-bold text-lg tracking-widest">
           diskusi
         </a>
         <div className="flex gap-4 items-center">
@@ -14,10 +14,10 @@ const Navbar = () => {
           >
             New Post
           </a>
-          <a href="" className="flex content-center">
+          <a href="/login" className="flex content-center">
             Login
           </a>
-          <a href="" className="flex content-center">
+          <a href="/register" className="flex content-center">
             Register
           </a>
         </div>
