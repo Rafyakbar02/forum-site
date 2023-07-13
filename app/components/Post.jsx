@@ -2,7 +2,7 @@ import React from "react";
 
 const Post = () => {
   return (
-    <div className="p-6 border border-gray-200 rounded-xl bg-white">
+    <div className="p-6 border border-gray-200 shadow-sm rounded-xl bg-white">
       <a href="">
         <h5 className="font-bold mb-2 text-xl">A Header</h5>
       </a>

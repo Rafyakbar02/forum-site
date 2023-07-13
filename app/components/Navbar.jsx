@@ -2,15 +2,15 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white">
+    <nav className="bg-white shadow-sm border border-gray-200">
       <div className="mx-auto p-4 flex items-center justify-between max-w-6xl">
-        <a href="/" className="font-bold text-lg tracking-widest">
+        <a href="/" className="font-bold text-2xl tracking-widest">
           diskusi
         </a>
         <div className="flex gap-4 items-center">
           <a
             href="/submit"
-            className="bg-blue-700 px-3 py-2 text-white rounded-xl"
+            className="hidden bg-blue-700 px-3 py-2 text-white rounded-xl"
           >
             New Post
           </a>
