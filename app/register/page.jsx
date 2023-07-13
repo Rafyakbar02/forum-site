@@ -12,7 +12,7 @@ const page = () => {
       <TextInput placeholder={"Confirm Password"} />
       <a
         href="/"
-        className="bg-blue-700 px-3 py-2 text-white rounded-xl mx-auto"
+        className="bg-blue-700 px-3 py-2 text-white rounded-xl mx-auto mb-8"
       >
         Register
       </a>
