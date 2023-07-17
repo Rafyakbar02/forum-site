@@ -39,9 +39,11 @@ const page = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-4 flex flex-col m-auto w-3/4 max-w-xl"
+      className="p-4 flex flex-col m-auto w-full sm:w-3/4 max-w-xl"
     >
-      <h1 className="m-8 mx-auto font-bold text-3xl">Create New Post</h1>
+      <h1 className="mb-8 mt-4 mx-auto font-bold text-2xl sm:text-3xl">
+        Create New Post
+      </h1>
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}
