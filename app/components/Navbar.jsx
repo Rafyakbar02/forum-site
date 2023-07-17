@@ -10,14 +10,14 @@ const Navbar = () => {
         <div className="flex gap-4 items-center">
           <a
             href="/submit"
-            className="hidden bg-blue-700 px-3 py-2 text-white rounded-xl"
+            className="bg-blue-700 px-3 py-2 text-white rounded-xl"
           >
             New Post
           </a>
-          <a href="/login" className="flex content-center">
+          <a href="/login" className="hidden content-center">
             Login
           </a>
-          <a href="/register" className="flex content-center">
+          <a href="/register" className="hidden content-center">
             Register
           </a>
         </div>
