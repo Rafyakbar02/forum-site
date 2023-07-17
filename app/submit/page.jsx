@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const page = () => {
   const [title, setTitle] = useState("");
@@ -61,9 +62,9 @@ const page = () => {
         className="border border-gray rounded-lg px-2.5 py-1.5 w-full mb-4"
       ></textarea>
       <div className="flex flex-row gap-4 mx-auto">
-        <a href="/" className="px-3 py-2 text-white rounded-xl bg-gray-700">
+        <Link href="/" className="px-3 py-2 text-white rounded-xl bg-gray-700">
           Cancel
-        </a>
+        </Link>
         <button
           type="submit"
           className="bg-blue-700 px-3 py-2 text-white rounded-xl"

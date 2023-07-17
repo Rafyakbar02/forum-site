@@ -1,5 +1,6 @@
 import React from "react";
 import TextInput from "../components/TextInput";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -10,12 +11,12 @@ const page = () => {
       <TextInput type={"text"} placeholder={"Email"} />
       <TextInput type={"password"} placeholder={"Create Password"} />
       <TextInput type={"password"} placeholder={"Confirm Password"} />
-      <a
+      <Link
         href="/"
         className="bg-blue-700 px-3 py-2 text-white rounded-xl mx-auto mb-8"
       >
         Register
-      </a>
+      </Link>
     </form>
   );
 };
