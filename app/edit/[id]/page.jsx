@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import EditForm from "@/app/components/EditForm";
+import { EditForm } from "@/app/components/Form";
 
 const getTopicById = async (id) => {
   try {

@@ -7,7 +7,7 @@ const page = () => {
       <h1 className="text-center text-2xl">Masuk Akun</h1>
       <input
         type="text"
-        placeholder="Email"
+        placeholder="email@kamu.com"
         className="border border-gray rounded-lg px-2.5 py-1.5 w-full"
       />
       <input
