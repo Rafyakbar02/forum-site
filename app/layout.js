@@ -1,6 +1,12 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "diskusi",
@@ -10,10 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="roboto.className tracking-tight">
         <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );

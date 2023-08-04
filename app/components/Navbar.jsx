@@ -1,28 +1,28 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Navbar = () => {
+  const { pathname } = useRouter();
+
   return (
-    <nav className="bg-white shadow-sm border border-gray-200">
-      <div className="mx-auto max-w-4xl p-4 flex items-center justify-between">
-        <Link href="/" className="font-bold text-2xl tracking-widest">
+    <nav className="w-full sm:w-[750px] sm:mx-auto bg-white text-black rounded-3xl p-6 flex justify-between items-center shadow border border-gray-200">
+      <div className="flex gap-8 items-center">
+        <Link href="/" className="text-2xl font-black">
           diskusi
         </Link>
-        <div className="flex gap-4 items-center">
-          <Link
-            href="/submit"
-            className="bg-blue-700 px-3 py-2 text-white rounded-xl"
-          >
-            New Post
-          </Link>
-          <Link href="/login" className="hidden content-center">
-            Login
-          </Link>
-          <Link href="/register" className="hidden content-center">
-            Register
-          </Link>
-        </div>
+        <h1 className="text-sm">Komunal</h1>
+        <Link href="/submit" className="text-sm">
+          Buat Diskusi
+        </Link>
       </div>
+      {pathname !== "/login" ? (
+        <Link href={"/login"} className="text-sm">
+          Masuk
+        </Link>
+      ) : null}
     </nav>
   );
 };

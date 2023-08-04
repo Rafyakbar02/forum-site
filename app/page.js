@@ -19,9 +19,5 @@ const getTopics = async () => {
 export default async function Home() {
   const { topics } = await getTopics();
 
-  return (
-    <div className="m-4 max-w-2xl md:mx-auto">
-      <PostList topics={topics} />
-    </div>
-  );
+  return <PostList topics={topics} />;
 }

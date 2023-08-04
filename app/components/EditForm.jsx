@@ -35,17 +35,15 @@ const EditForm = ({ id, title, description }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-4 flex flex-col m-auto w-full sm:w-3/4 max-w-xl"
+      className="flex flex-col m-auto sm:w-[750px] sm:mx-auto gap-4 my-2 p-6 shadow border border-gray-200 rounded-3xl"
     >
-      <h1 className="mb-8 mt-4 mx-auto font-bold text-2xl sm:text-3xl">
-        Edit Post
-      </h1>
+      <h1 className="text-center text-2xl">Edit Postingan</h1>
       <input
         onChange={(e) => setNewTitle(e.target.value)}
         value={newTitle}
         type="text"
         placeholder="Title"
-        className="border border-gray rounded-lg px-2.5 py-1.5 w-full mb-4"
+        className="border border-gray rounded-lg px-2.5 py-1.5 w-full"
       />
       <textarea
         onChange={(e) => setNewDescription(e.target.value)}
@@ -54,17 +52,17 @@ const EditForm = ({ id, title, description }) => {
         cols="30"
         rows="5"
         placeholder="Text (Optional)"
-        className="border border-gray rounded-lg px-2.5 py-1.5 w-full mb-4"
+        className="border border-gray rounded-lg px-2.5 py-1.5 w-full"
       ></textarea>
       <div className="flex flex-row gap-4 mx-auto">
-        <Link href="/" className="px-3 py-2 text-white rounded-xl bg-gray-700">
-          Cancel
+        <Link href="/" className="px-3 py-2 text-white rounded-xl bg-gray-600">
+          Batal
         </Link>
         <button
           type="submit"
-          className="bg-blue-700 px-3 py-2 text-white rounded-xl"
+          className="bg-green-500 px-3 py-2 text-white rounded-xl"
         >
-          Update
+          Edit
         </button>
       </div>
     </form>
