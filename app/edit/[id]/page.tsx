@@ -1,6 +1,6 @@
 "use client";
 
-import { EditForm } from "@/app/components/Form";
+import { EditForm } from "../../components/Form";
 
 const getTopicById = async (id) => {
   try {
