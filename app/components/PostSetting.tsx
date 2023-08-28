@@ -98,7 +98,7 @@ const PostSetting = ({ router, id }) => {
                   className={`${
                     active ? "bg-blue-500 text-white" : ""
                   } p-2 text-left flex items-center text-sm gap-3 rounded-lg`}
-                  onClick={() => removeTopic(router, id)}
+                  onClick={() => removeTopic({ router, id })}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

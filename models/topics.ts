@@ -4,6 +4,8 @@ const topicSchema = new Schema(
   {
     title: String,
     description: String,
+    komunal: String,
+    user: String,
   },
   {
     timestamps: true,

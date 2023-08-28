@@ -4,9 +4,11 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 
-const EditForm = ({ id, title, description }) => {
+const EditForm = ({ id, title, description, komunal, user }) => {
   const [newTitle, setNewTitle] = useState(title);
   const [newDescription, setNewDescription] = useState(description);
+  const [newKomunal, setNewKomunal] = useState(komunal);
+  const [newUser, setNewUser] = useState(user);
 
   const router = useRouter();
 
@@ -19,7 +21,7 @@ const EditForm = ({ id, title, description }) => {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ newTitle, newDescription }),
+        body: JSON.stringify({ newTitle, newDescription, newKomunal, newUser }),
       });
       if (!res.ok) {
         throw new Error("Failed to update topic");
@@ -39,6 +41,10 @@ const EditForm = ({ id, title, description }) => {
       setTitle={setNewTitle}
       description={newDescription}
       setDescription={setNewDescription}
+      komunal={komunal}
+      setKomunal={setNewKomunal}
+      user={user}
+      setUser={setNewUser}
       submitButtonValue={"Edit"}
     />
   );
@@ -47,6 +53,8 @@ const EditForm = ({ id, title, description }) => {
 const NewForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [komunal, setKomunal] = useState("");
+  const [user, setUser] = useState("");
 
   const router = useRouter();
 
@@ -64,10 +72,11 @@ const NewForm = () => {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ title, description }),
+        body: JSON.stringify({ title, description, komunal, user }),
       });
 
       if (res.ok) {
+        router.refresh();
         router.push("/");
       } else {
         throw new Error("Failer to create a post");
@@ -84,6 +93,10 @@ const NewForm = () => {
       setTitle={setTitle}
       description={description}
       setDescription={setDescription}
+      komunal={komunal}
+      setKomunal={setKomunal}
+      user={user}
+      setUser={setUser}
       submitButtonValue={"Post"}
     />
   );
@@ -96,6 +109,10 @@ const PlainForm = ({
   setTitle,
   description,
   setDescription,
+  komunal,
+  setKomunal,
+  user,
+  setUser,
   submitButtonValue,
 }) => {
   return (
@@ -104,6 +121,22 @@ const PlainForm = ({
       className="flex flex-col m-auto sm:w-[750px] sm:mx-auto gap-4 my-2 p-6 shadow border border-gray-200 rounded-3xl"
     >
       <h1 className="text-center text-2xl">{heading}</h1>
+      <div className="grid grid-cols-2 gap-2">
+        <input
+          onChange={(e) => setKomunal(e.target.value)}
+          value={komunal}
+          type="text"
+          placeholder="Mau post dimana"
+          className="border border-gray rounded-lg px-2.5 py-1.5"
+        />
+        <input
+          onChange={(e) => setUser(e.target.value)}
+          value={user}
+          type="text"
+          placeholder="Siapa yang nge-post?"
+          className="border border-gray rounded-lg px-2.5 py-1.5"
+        />
+      </div>
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}
@@ -115,8 +148,8 @@ const PlainForm = ({
         onChange={(e) => setDescription(e.target.value)}
         value={description}
         id=""
-        cols="30"
-        rows="5"
+        cols={30}
+        rows={5}
         placeholder="Text (Optional)"
         className="border border-gray rounded-lg px-2.5 py-1.5 w-full"
       ></textarea>

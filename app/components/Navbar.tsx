@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   return (
     <nav className="w-full sm:w-[750px] sm:mx-auto bg-white text-black rounded-3xl p-6 flex justify-between items-center shadow border border-gray-200">

@@ -1,26 +1,22 @@
 "use client";
 
 import { EditForm } from "../../components/Form";
+import getTopicById from "../../getTopicsById";
 
-const getTopicById = async (id) => {
-  try {
-    const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
-      cache: "no-store",
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch topic");
-    }
-    return res.json();
-  } catch (error) {
-    console.log(error);
-  }
-};
 const page = async ({ params }) => {
   const { id } = params;
   const { topic } = await getTopicById(id);
-  const { title, description } = topic;
+  const { title, description, komunal, user } = topic;
 
-  return <EditForm id={id} title={title} description={description} />;
+  return (
+    <EditForm
+      id={id}
+      title={title}
+      description={description}
+      komunal={komunal}
+      user={user}
+    />
+  );
 };
 
 export default page;
